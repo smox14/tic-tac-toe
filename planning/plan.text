@@ -1,0 +1,37 @@
+pseudocode - Tic Tac Toe Version.1
+1. intial game setting
+    - set the players 
+    - set board game 
+    - set win patterns [[]]
+2.random who go first 
+3.player X move first 
+    - save into player X's move history
+4.check if the tie?
+    - yes, display: tie   -> end 
+5.check if player X win? 
+    - yes, display: player X win  -> end 
+    - no, next player turn
+
+
+#win patern 1
+set board: 
+1 | 2 | 3
+4 | 5 | 6
+7 | 8 | 9
+
+win patterns: 
+row win:
+[1,2,3]
+[4,5,6]
+[7,8,9]
+
+column win: 
+[1,4,7]
+[2,5,8]
+[3,6,9]
+
+diagonal win:
+[1,5,9]
+[3,5,7]
+
+

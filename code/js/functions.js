@@ -1,6 +1,6 @@
 function startNewGame(){
     boardArr = createBoard()
-    // isGameOver = false
+    isGameOver = false
     count = 0
     players = []
     players.push(createPlayer('Player1',imgDir+avartar[0]))
@@ -45,20 +45,23 @@ function checkCanMove(player, playerClickIndex,boardArr){
     return false
 }
 
-function checkIsWin(moves){
+function checkIsWin(moves,boardArr){
     var winPatterns = getWinPattern()
     var isPlayerWinArr = winPatterns.map( eachP => eachP.every( m => moves.includes(m)))
     var isPlayerWin = isPlayerWinArr.some(bool => bool)
-    return isPlayerWin
-}
-
-function checkDraw(boardArr){
-    if(boardArr.length === 0){
+    
+    if(isPlayerWin){
+        console.log(`Congrats! ${currentPlayer.name} win:`)
+        return true
+    }else if(boardArr.length === 0){
         console.log('DRAW!')
         return true
     }
     return false
+
 }
+
+
 
 function getPlayer(playerArr,index){
     playerIndex = index % playerArr.length

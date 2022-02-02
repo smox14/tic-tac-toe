@@ -1,9 +1,9 @@
-var imgDir = './img/'
+var imgDir = './images/'
 var avartar = ["x.png","o.png"]
 
 // initial setting
 var boardArr = createBoard()
-// var isGameOver 
+var isGameOver 
 var count = 0
 var players
 var temp; // debug variable. deleted later
@@ -14,8 +14,6 @@ var board = document.querySelector('.board')
 startNewGame()
 clearBoard(board)
 board.addEventListener('click',function(event){    
-    temp = event
-
     // check which index player clicked, will return Nan if can not get index
     var playerClickIndex = getBoardIndex(event) 
     //  check if player can click? 
@@ -24,16 +22,10 @@ board.addEventListener('click',function(event){
         displayScreen(currentPlayer,playerClickIndex)
         
         //  check win 
-        var isPlayerWin = checkIsWin(currentPlayer.moves)
-        if(isPlayerWin){
-            console.log(`Congrats! ${currentPlayer.name} win:`)
-        }
+        var isGameOver = checkIsWin(currentPlayer.moves,boardArr)
         
-        // check Draw
-        var isDraw = checkDraw(boardArr)  // note should get 
-
-        if(isPlayerWin || isDraw){
-            console.log("game over", currentPlayer.moves)
+        if(isGameOver){
+            console.log("game over")
             startNewGame()
             clearBoard(board)
         }else{

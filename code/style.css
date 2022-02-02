@@ -1,0 +1,109 @@
+
+*{
+    box-sizing: border-box;
+    max-width: 100%;
+    
+}
+body{
+    max-width: 960px;
+    margin: 5% auto;
+    text-align: center;
+    background-color: #d5f1f2;
+    font-family: 'Itim', cursive;
+    text-transform:uppercase;
+}
+.main-game{
+    display: block;
+}
+
+main  .board{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 5px; 
+    margin: 1rem auto;
+    max-width: 500px;
+    max-width: 95%;
+    /* width: fit-content; */
+    /* margin: 5rem auto; */
+    /* background-color: white; */
+    /* align-content: center; */
+}
+
+main .board div{
+    background-repeat: no-repeat;
+    background-color:#84d5d6;
+    /* padding: 3rem 3rem;  */
+    background-position: center;
+    width: 100%;
+    padding-bottom: 80%;
+    /* box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.5); */
+    background-size:70%;    
+}
+
+header h1{
+    margin: 3rem 5px;
+    font-size: 30px;
+    margin-bottom: 0;
+    display: none;
+}
+
+header .title{
+    margin-top: 0;
+}
+
+header .player-turn{
+    color: blue;
+}
+
+/* -------------------Pre-Game Form----------------------- */
+
+.intro{
+    display: none;
+}
+
+
+/* Add styles to the form container */
+.form-container {
+    max-width: 300px;
+    padding: 10px;
+    background-color: white;
+}
+
+/* Full-width input fields */
+.form-container input[type=text], .form-container input[type=password] {
+    width: 100%;
+    padding: 15px;
+    margin: 5px 0 22px 0;
+    border: none;
+    background: #f1f1f1;
+  }
+  
+  /* When the inputs get focus, do something */
+  .form-container input[type=text]:focus, .form-container input[type=password]:focus {
+    background-color: #ddd;
+    outline: none;
+  }
+
+  /* Set a style for the submit/login button */
+.form-container .btn {
+    background-color: #04AA6D;
+    color: white;
+    padding: 16px 20px;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+    margin-bottom:10px;
+    opacity: 0.8;
+  }
+  
+  /* Add a red background color to the cancel button */
+  .form-container .cancel {
+    background-color: red;
+  }
+  
+  /* Add some hover effects to buttons */
+  .form-container .btn:hover, .open-button:hover {
+    opacity: 1;
+  }
+  
+  

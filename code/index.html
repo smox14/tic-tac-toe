@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="style.css">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri&family=Itim&display=swap" rel="stylesheet">
+
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tic-Tac-Toe</title>
+    
+</head>
+<body>
+    <section class="main-game">
+        <header>
+            <h1 class="MeaoW">MeaoW-meaow-MeaoW</h1>
+            <h2 class="title">Tic-Tac-Toe</h2>
+            <!-- <h2 class="title"></h2> -->
+            <section class="players">
+                <h2><span class="player1">Player1</span> VS <span class="player2">Player2  </span></h2>
+                <h3 class="player-turn">  Player 1 turn</h3>
+            </section>
+
+        </header>
+        <main>
+            <section class="board">
+                <div class="box box-1"></div>
+                <div class="box box-2"></div>
+                <div class="box box-3"></div>
+                <div class="box box-4"></div>
+                <div class="box box-5"></div>
+                <div class="box box-6"></div>
+                <div class="box box-7"></div>
+                <div class="box box-8"></div>
+                <div class="box box-9"></div>
+            </section>
+
+            <section class="table">
+                <table>
+                    <tbody><tr id="row1" class="row">
+                        <td class="col0"></td>
+                        <td class="col1"></td>
+                        <td class="col2"></td>
+                    </tr>
+                    <tr id="row2" class="row">
+                        <td class="col0"></td>
+                        <td class="col1"></td>
+                        <td class="col2"></td>
+                    </tr>
+                    <tr id="row3" class="row">
+                        <td class="col0"></td>
+                        <td class="col1"></td>
+                        <td class="col2"></td>
+                    </tr>
+                </tbody>
+                </table>
+            </section>
+        </main>
+    </section>
+    <section class="intro">
+        <div class="form-popup" id="myForm">
+            <form action="/action_page.php" class="form-container">
+              <h1>Login</h1>
+          
+              <label for="email"><b>Email</b></label>
+              <input type="text" placeholder="Enter Email" name="email" required>
+          
+              <label for="psw"><b>Password</b></label>
+              <input type="password" placeholder="Enter Password" name="psw" required>
+          
+              <button type="submit" class="btn">Login</button>
+              <button type="button" class="btn cancel" onclick="closeForm()">Close</button>
+            </form>
+          </div>
+          
+    </section>
+
+    <script type="text/javascript" src="./js/DOM-functions.js"></script>
+    <script type="text/javascript" src="./js/functions.js"></script>
+    <script type="text/javascript" src="./js/main.js"></script>
+    <!-- <script src="./javascript/script.js"></script> -->
+</body>
+</html>

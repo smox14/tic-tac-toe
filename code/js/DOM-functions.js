@@ -22,3 +22,14 @@ function clearBoard(board){
         board.children[i].style.backgroundImage = ''
     }
 }
+
+function displayGameOver(winner){
+    meowSound.play() 
+    message = (winner)? `${winner} win!` : `draw!`
+    sleep(1000).then(() => {
+        document.querySelector('.winner').textContent = message
+        document.querySelector('.gameover').classList.remove('hide')
+
+    });
+    
+}

@@ -10,13 +10,13 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tic-Tac-Toe</title>
+    <title>Meow-meoW-MeoW</title>
     
 </head>
 <body>
-    <section class="main-game">
+    <section class="main-game ">
         <header>
-            <h1 class="MeaoW">MeaoW-meaow-MeaoW</h1>
+            <h1 class="MeaoW">Meow-meoW-MeoW</h1>
             <h2 class="title">Tic-Tac-Toe</h2>
             <!-- <h2 class="title"></h2> -->
             <section class="players">
@@ -37,47 +37,33 @@
                 <div class="box box-8"></div>
                 <div class="box box-9"></div>
             </section>
-
-            <section class="table">
-                <table>
-                    <tbody><tr id="row1" class="row">
-                        <td class="col0"></td>
-                        <td class="col1"></td>
-                        <td class="col2"></td>
-                    </tr>
-                    <tr id="row2" class="row">
-                        <td class="col0"></td>
-                        <td class="col1"></td>
-                        <td class="col2"></td>
-                    </tr>
-                    <tr id="row3" class="row">
-                        <td class="col0"></td>
-                        <td class="col1"></td>
-                        <td class="col2"></td>
-                    </tr>
-                </tbody>
-                </table>
-            </section>
         </main>
+        <section class='main-bg'> 
+            <img src="./images/cat-bg.png">
+        </section>
     </section>
-    <section class="intro">
-        <div class="form-popup" id="myForm">
-            <form action="/action_page.php" class="form-container">
-              <h1>Login</h1>
-          
-              <label for="email"><b>Email</b></label>
-              <input type="text" placeholder="Enter Email" name="email" required>
-          
-              <label for="psw"><b>Password</b></label>
-              <input type="password" placeholder="Enter Password" name="psw" required>
-          
-              <button type="submit" class="btn">Login</button>
-              <button type="button" class="btn cancel" onclick="closeForm()">Close</button>
-            </form>
-          </div>
-          
+    <section class="intro hide">
+        <section class="container">
+            <h1>Meow-meoW-MeoW</h1>
+            <h3> Tic-Tac-Toe Cats version</h3>
+            <button class="btn play">PLAY</button>
+        </section>
+        <section class='cat popIn'>
+            <img src="./images/cat-bg.png" alt="">
+        </section>
+       
     </section>
-
+   
+    <section class="gameover hide">
+        <section class="container">
+            <h1 class="winner"></h1>
+        
+            <section class="buttons">
+                <button class="btn endgame">END GAME</button>
+                <button class="btn playagain">PLAY AGAIN</button>
+            </section>
+        </section>
+    </section>
     <script type="text/javascript" src="./js/DOM-functions.js"></script>
     <script type="text/javascript" src="./js/functions.js"></script>
     <script type="text/javascript" src="./js/main.js"></script>

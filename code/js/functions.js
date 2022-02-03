@@ -34,7 +34,7 @@ function getWinPattern(){
             [3,5,7]]
 }
 
-function checkCanMove(player, playerClickIndex,boardArr){
+function checkCanClick(player, playerClickIndex,boardArr){
     // note: playerClickIndex = clickIndex + 1
     var clickIndex = boardArr.indexOf(playerClickIndex)
     if(clickIndex >= 0){
@@ -45,25 +45,23 @@ function checkCanMove(player, playerClickIndex,boardArr){
     return false
 }
 
-function checkIsWin(moves,boardArr){
+function checkIsWin(moves){
     var winPatterns = getWinPattern()
     var isPlayerWinArr = winPatterns.map( eachP => eachP.every( m => moves.includes(m)))
     var isPlayerWin = isPlayerWinArr.some(bool => bool)
-    
-    if(isPlayerWin){
-        console.log(`Congrats! ${currentPlayer.name} win:`)
-        return true
-    }else if(boardArr.length === 0){
-        console.log('DRAW!')
-        return true
-    }
-    return false
-
+    return isPlayerWin
 }
 
-
+function checkIsDraw(boardArr){
+    return (boardArr.length === 0)
+}
 
 function getPlayer(playerArr,index){
     playerIndex = index % playerArr.length
     return playerArr[playerIndex]
+}
+
+// sleep time expects milliseconds
+function sleep (time) {
+    return new Promise((resolve) => setTimeout(resolve, time));
 }

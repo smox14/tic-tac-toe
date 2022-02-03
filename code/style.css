@@ -2,36 +2,48 @@
 *{
     box-sizing: border-box;
     max-width: 100%;
-    
 }
-body{
-    max-width: 960px;
-    margin: 5% auto;
-    text-align: center;
-    background-color: #d5f1f2;
-    font-family: 'Itim', cursive;
-    text-transform:uppercase;
-}
-.main-game{
-    display: block;
+.hide{
+    display: none;
 }
 
+.blur{
+    filter: blur(4px);
+}
+
+.main-bg{
+    width: 10rem;
+    margin: 0 auto;
+    transform: rotate(20deg);
+}
+
+body{
+    max-width: 960px;
+    margin: 1rem auto;
+    text-align: center;
+    background-color: #8dbaba;
+    color: white;
+    font-family: 'Itim', cursive;
+    text-transform:uppercase;
+    height: 100%;
+}
+
+main{
+    margin: 2rem auto;
+}
 main  .board{
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     gap: 5px; 
-    margin: 1rem auto;
+    margin: 2rem auto;
     max-width: 500px;
     max-width: 95%;
-    /* width: fit-content; */
-    /* margin: 5rem auto; */
-    /* background-color: white; */
-    /* align-content: center; */
+
 }
 
 main .board div{
     background-repeat: no-repeat;
-    background-color:#84d5d6;
+    background-color:rgba(246, 234, 190,0.7);
     /* padding: 3rem 3rem;  */
     background-position: center;
     width: 100%;
@@ -44,7 +56,7 @@ header h1{
     margin: 3rem 5px;
     font-size: 30px;
     margin-bottom: 0;
-    display: none;
+    /* display: none; */
 }
 
 header .title{
@@ -52,58 +64,95 @@ header .title{
 }
 
 header .player-turn{
-    color: blue;
+    color: #558776;
 }
 
 /* -------------------Pre-Game Form----------------------- */
 
-.intro{
-    display: none;
+.intro .container{
+display: block;
+margin-top: 30%;
+margin-left: 5%;
+margin-right: 5%;
+padding: 1rem;
+border: 3px solid #f1f1f1;
+background-color: rgba(135, 170, 170,0.7);
+}
+
+.intro .cat{
+    margin-top: 10%;
+    /* padding-left: 5%; */
+    padding-right: 5%;
+    transform: rotate(20deg);
 }
 
 
-/* Add styles to the form container */
-.form-container {
-    max-width: 300px;
-    padding: 10px;
-    background-color: white;
-}
-
-/* Full-width input fields */
-.form-container input[type=text], .form-container input[type=password] {
-    width: 100%;
-    padding: 15px;
-    margin: 5px 0 22px 0;
+.intro .btn{
     border: none;
-    background: #f1f1f1;
-  }
-  
-  /* When the inputs get focus, do something */
-  .form-container input[type=text]:focus, .form-container input[type=password]:focus {
-    background-color: #ddd;
-    outline: none;
-  }
-
-  /* Set a style for the submit/login button */
-.form-container .btn {
-    background-color: #04AA6D;
-    color: white;
-    padding: 16px 20px;
-    border: none;
+    color:darkcyan;
+    background-color: rgba(255,255,255,0);
+    padding: 14px 28px;
+    font-size: 16px;
+    font-weight: 600;
     cursor: pointer;
-    width: 100%;
-    margin-bottom:10px;
-    opacity: 0.8;
+    display: inline-block;
+}
+
+.btn:active {
+    transform: translateY(4px);
   }
-  
-  /* Add a red background color to the cancel button */
-  .form-container .cancel {
-    background-color: red;
-  }
-  
-  /* Add some hover effects to buttons */
-  .form-container .btn:hover, .open-button:hover {
-    opacity: 1;
-  }
-  
-  
+
+  @keyframes appeared {
+    0% { display: none; visibility: hidden; }
+    100% { display: block; visibility: block;  }
+}
+
+
+.gameover {
+    /*   display: none; Hidden by default */
+      position: fixed; /* Stay in place */
+      z-index: 1; /* Sit on top */
+      left: 0;
+      top: 0;
+      width: 100%; /* Full width */
+      height: 100%; /* Full height */
+      overflow: auto; /* Enable scroll if needed */
+      background-color: rgb(0,0,0); /* Fallback color */
+      background-color: rgba(0,0,0,0.4); /* Black w/ opacity */ 
+    }
+.gameover .container{
+    max-width: 960px;
+    background-color: rgba(246, 234, 190, 1);
+    margin: 15rem auto; /* 30% from the top and centered */
+    padding: 20px;
+    width: 80%; /* Could be more or less, 
+    depending on screen size */
+    height: 40vh;
+    border-radius: 0.5rem;
+}    
+.gameover .winner{
+    font-size: 2rem;
+    margin-top: 2rem;
+    margin-bottom: 3rem;
+    color: #FF8243;
+}
+
+.gameover .btn{
+    border: none;
+    color:darkcyan;
+    background-color: rgba(255,255,255,0);
+    padding: 1rem 1rem;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    display: inline-block;
+} 
+
+.btn:hover{
+    color: black;
+} 
+
+@keyframes disappeared {
+    0% { display: block; visibility: block; }
+    100% { display: none; visibility: hidden; }
+}

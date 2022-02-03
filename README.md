@@ -1,12 +1,12 @@
-#Tic Tac Toe
+Tic Tac Toe
 ---
-#Approach to problem (planning)
+Approach to problem (planning)
 ---
-#Cool tech used
+Cool tech used
 ---
-#Lessons I've learnt
+Lessons I've learnt
 ---
-#Features
+Features
 ---
-#Comming soon Features
+Comming soon Features
 ---

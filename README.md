@@ -12,8 +12,8 @@ Features
 
 Comming soon 
 ---
-- [] show scores
-- [] board size options
-- [] play with computer
-- [] time limit
+- [ ] show scores
+- [ ] board size options
+- [ ] play with computer
+- [ ] time limit
 

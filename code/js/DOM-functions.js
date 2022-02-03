@@ -8,13 +8,10 @@ function displayPlayerTurn(player){
     
 }
 
-function displayScreen(currentPlayer,boxNumber){
+function displayAvatar(currentPlayer,boxNumber){
     var boxClass = '.box-' + boxNumber
-    // console.log(currentPlayer.avartar)
     temp = document.querySelector(boxClass)
-    // temp.style.backgroundImage = currentPlayer.avartar
-    temp.style.backgroundImage = `url('${currentPlayer.avartar}')`
-    // console.log(currentPlayer.avartar)
+    temp.style.backgroundImage = `url('${currentPlayer.avatar}')`
 }
 
 function clearBoard(board){
@@ -27,9 +24,24 @@ function displayGameOver(winner){
     meowSound.play() 
     message = (winner)? `${winner} win!` : `draw!`
     sleep(1000).then(() => {
+        // set effect blur to the board
+        document.querySelector('main').classList.add('blur')
         document.querySelector('.winner').textContent = message
         document.querySelector('.gameover').classList.remove('hide')
+    });  
+}
 
-    });
-    
+function removeClassList(className, classCss){
+    for(var i=0; i< className.childElementCount; i++){
+        className.children[i].classList.remove(classCss)
+    }
+}
+
+function setDOMdisplay(){
+    document.querySelector('.intro').classList.remove('hide')  
+    document.querySelector('.select-cat').classList.add('hide')
+    document.querySelector('.gameover').classList.add('hide')
+    document.querySelector('.main-game').classList.add('hide')
+    document.querySelector('.select-cat .player').textContent = currentPlayer.name
+    displayPlayerTurn(currentPlayer)
 }

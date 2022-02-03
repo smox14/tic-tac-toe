@@ -2,19 +2,26 @@ function startNewGame(){
     boardArr = createBoard()
     isGameOver = false
     count = 0
-    players = []
-    players.push(createPlayer('Player1',imgDir+avartar[0]))
-    players.push(createPlayer('Player2',imgDir+avartar[1]))
-    currentPlayer = getPlayer(players,count)
-    displayPlayerTurn(currentPlayer)
+    playerArr.push(createPlayer(`CAT 1`,avatar[0],clickSounds[0]))
+    playerArr.push(createPlayer(`CAT 2`,avatar[1],clickSounds[1]))
+    currentPlayer = playerArr[0]
+    winner = ''
 }
 
-function createPlayer(name,avartar = ''){
+function createPlayer(name,avatar = '',clickSound){
     return {
     name:name,
-    avartar: avartar,
-    moves: []
+    avatar: avatar,
+    moves: [],
+    clickSound: new Audio(clickSound)
     }
+}
+
+function setPlayerNewRound(){
+    playerArr.map(p => p.moves = [])
+    count = 0 
+    // currentPlayer =  currentPlayer
+    boardArr = createBoard()
 }
 
 function createBoard(){
@@ -45,10 +52,11 @@ function checkCanClick(player, playerClickIndex,boardArr){
     return false
 }
 
-function checkIsWin(moves){
+function checkIsWin(moves,boardArr){
     var winPatterns = getWinPattern()
     var isPlayerWinArr = winPatterns.map( eachP => eachP.every( m => moves.includes(m)))
     var isPlayerWin = isPlayerWinArr.some(bool => bool)
+    if(isPlayerWin) boardArr = []
     return isPlayerWin
 }
 
@@ -56,12 +64,12 @@ function checkIsDraw(boardArr){
     return (boardArr.length === 0)
 }
 
-function getPlayer(playerArr,index){
-    playerIndex = index % playerArr.length
-    return playerArr[playerIndex]
+function swapPlayer(player){
+    return (playerArr[0].name === player.name)? playerArr[1] : playerArr[0]
 }
 
 // sleep time expects milliseconds
 function sleep (time) {
     return new Promise((resolve) => setTimeout(resolve, time));
 }
+

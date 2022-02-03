@@ -1,4 +1,3 @@
-
 *{
     box-sizing: border-box;
     max-width: 100%;
@@ -6,15 +5,12 @@
 .hide{
     display: none;
 }
-
 .blur{
     filter: blur(4px);
 }
-
-.main-bg{
-    width: 10rem;
-    margin: 0 auto;
-    transform: rotate(20deg);
+.selected{
+    filter: opacity(30%);
+    pointer-events: none;
 }
 
 body{
@@ -25,9 +21,28 @@ body{
     color: white;
     font-family: 'Itim', cursive;
     text-transform:uppercase;
-    height: 100%;
+    
 }
 
+.main-bg img{
+    width: 10rem;
+    margin: 2vh auto;
+  
+    transform: rotate(20deg);
+}
+
+header h1{
+    margin: 1rem 5px;
+    font-size: 30px;
+    margin-bottom: 0;
+    margin-top: 2rem;
+}
+header .title{
+    margin-top: 0;
+}
+header .player-turn{
+    color: #558776;
+}
 main{
     margin: 2rem auto;
 }
@@ -52,61 +67,57 @@ main .board div{
     background-size:70%;    
 }
 
-header h1{
-    margin: 3rem 5px;
-    font-size: 30px;
-    margin-bottom: 0;
-    /* display: none; */
-}
-
-header .title{
-    margin-top: 0;
-}
-
-header .player-turn{
-    color: #558776;
-}
 
 /* -------------------Pre-Game Form----------------------- */
 
 .intro .container{
-display: block;
-margin-top: 30%;
-margin-left: 5%;
-margin-right: 5%;
-padding: 1rem;
-border: 3px solid #f1f1f1;
-background-color: rgba(135, 170, 170,0.7);
-}
-
+    display: block;
+    margin-top: 10vh;
+    margin-left: 5%;
+    margin-right: 5%;
+    padding: 2rem;
+ 
+    border: 3px solid #f1f1f1;
+    background-color: rgba(135, 170, 170,0.7);
+    }
+    
 .intro .cat{
     margin-top: 10%;
-    /* padding-left: 5%; */
     padding-right: 5%;
     transform: rotate(20deg);
 }
 
+.intro h1{
+    font-size: 1.5rem;
+}
 
 .intro .btn{
     border: none;
     color:darkcyan;
     background-color: rgba(255,255,255,0);
-    padding: 14px 28px;
     font-size: 16px;
     font-weight: 600;
     cursor: pointer;
     display: inline-block;
 }
-
 .btn:active {
     transform: translateY(4px);
-  }
+    }
 
-  @keyframes appeared {
-    0% { display: none; visibility: hidden; }
-    100% { display: block; visibility: block;  }
+.select-cat{
+    max-width: 529px;
+    margin: 3rem auto;
+    padding: 0 2rem;
 }
-
+.select-cat h1{
+    font-size: 2rem;
+}
+.select-cat h2{
+    margin-bottom: 2.5rem;
+}
+.cat-imgas img{
+    max-width: 100%;   
+}
 
 .gameover {
     /*   display: none; Hidden by default */
@@ -115,44 +126,82 @@ background-color: rgba(135, 170, 170,0.7);
       left: 0;
       top: 0;
       width: 100%; /* Full width */
-      height: 100%; /* Full height */
+      height: 100%;
       overflow: auto; /* Enable scroll if needed */
       background-color: rgb(0,0,0); /* Fallback color */
       background-color: rgba(0,0,0,0.4); /* Black w/ opacity */ 
     }
-.gameover .container{
+
+.gameover .container {
     max-width: 960px;
-    background-color: rgba(246, 234, 190, 1);
-    margin: 15rem auto; /* 30% from the top and centered */
+    background-color: #c5dddd;
+    margin: 15rem auto;
     padding: 20px;
-    width: 80%; /* Could be more or less, 
-    depending on screen size */
-    height: 40vh;
+    width: 80%;
+    height: 250px;
     border-radius: 0.5rem;
-}    
+}   
 .gameover .winner{
-    font-size: 2rem;
+    font-size: 2.5rem;
     margin-top: 2rem;
     margin-bottom: 3rem;
-    color: #FF8243;
+    color: #22577E;
 }
 
-.gameover .btn{
+.gameover .btn {
     border: none;
-    color:darkcyan;
+    margin-top: 1rem;
     background-color: rgba(255,255,255,0);
+    color: darkcyan;
     padding: 1rem 1rem;
-    font-size: 1rem;
+    font-size: 1.1rem;
     font-weight: 600;
     cursor: pointer;
     display: inline-block;
-} 
+}
 
 .btn:hover{
     color: black;
 } 
 
-@keyframes disappeared {
-    0% { display: block; visibility: block; }
-    100% { display: none; visibility: hidden; }
+
+@media only screen and (min-width: 768px) {
+    .intro .btn{
+        font-size: 30px;
+    }
+    .intro h1{
+        font-size: 2.5rem;
+    }
+    .select-cat{
+        max-width: 529px;
+        height: 100%;
+        margin: 10rem auto;
+    }
+    .select-cat h1{
+        font-size: 3rem;
+        margin-top: 3rem;
+    }
+    .select-cat h2{
+        font-size: 2rem;
+        margin-bottom: 5rem;
+    }
+    header h1 {
+        margin: 1rem 5px;
+        font-size: 50px;
+        margin-bottom: 0;
+        margin-top: 3rem;
+    }
+    header .player-turn {
+        font-size: 2.5rem;
+    }
+    .gameover .container {
+        height: 300px;
+        margin: 25rem auto;
+    }
+    .gameover .winner {
+        font-size: 3rem;
+    }
+    .gameover .btn {
+        font-size: 2rem;
+    }
 }

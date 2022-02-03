@@ -3,6 +3,7 @@ var clickSounds = ['./sounds/bell1.wav','./sounds/bell2.wav']
 var meowSound = new Audio('./sounds/meow-sound1.wav')
 var gameoverSound = new Audio('./sounds/gameover.wav')
 var click = new Audio('./sounds/click-sound.wav')
+var meowSound2 = new Audio('./sounds/kitty-meow.wav')
 
 
 // declare variable
@@ -24,7 +25,7 @@ var selectAvatar = document.querySelector('.cat-imgs')
 
 // First meow page
 playBtn.addEventListener('click',function(){
-    meowSound.play()
+    meowSound2.play()
     sleep(1500).then(() => {
         document.querySelector('.intro').classList.toggle('hide')
         document.querySelector('.select-cat').classList.toggle('hide')
@@ -90,7 +91,7 @@ board.addEventListener('click',function(event){
 
 // game over
 btns.addEventListener('click',function(event){
-    meowSound.play() 
+    meowSound2.play() 
     // enable click board   
     board.style.pointerEvents = 'auto';
     selectAvatar.style.pointerEvents = 'auto';

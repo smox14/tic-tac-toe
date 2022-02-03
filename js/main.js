@@ -2,6 +2,7 @@ var avatar = ['./images/x.png','./images/o.png']
 var clickSounds = ['./sounds/bell1.wav','./sounds/bell2.wav']
 var meowSound = new Audio('./sounds/meow-sound1.wav')
 var gameoverSound = new Audio('./sounds/gameover.wav')
+var click = new Audio('./sounds/click-sound.wav')
 
 
 // declare variable
@@ -36,18 +37,20 @@ selectAvatar.addEventListener('click',function(event){
     var imgSrc = event.target.src
     
     if(imgSrc && count < numberOfPlayer){
+        click.play()
         selectedCat.classList.add('selected')
-        
         currentPlayer.avatar = imgSrc
         count += 1
         // swap player
         currentPlayer = swapPlayer(currentPlayer)
-        document.querySelector('.select-cat .player').textContent = currentPlayer.name
-        
+        if(count < 2) document.querySelector('.select-cat .player').textContent = currentPlayer.name
     }if(count >=2){
         count = 0
+        selectAvatar.style.pointerEvents = 'none';
+        sleep(1000).then(() => {
         document.querySelector('.select-cat').classList.toggle('hide')
         document.querySelector('.main-game').classList.remove('hide')
+        })
     }
 })
 
@@ -90,6 +93,7 @@ btns.addEventListener('click',function(event){
     meowSound.play() 
     // enable click board   
     board.style.pointerEvents = 'auto';
+    selectAvatar.style.pointerEvents = 'auto';
     sleep(1500).then(() => {
         action = event.target.className.split(' ').at(-1)
         if(action === 'playagain'){

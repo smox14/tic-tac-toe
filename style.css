@@ -21,7 +21,7 @@ body{
     color: white;
     font-family: 'Itim', cursive;
     text-transform:uppercase;
-    
+    /* cursor: url("./images/cursor.png"), auto; */
 }
 
 .main-bg img{

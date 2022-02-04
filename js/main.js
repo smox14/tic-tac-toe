@@ -23,7 +23,7 @@ var playBtn = document.querySelector('.btn.play')
 var btns = document.querySelector('.buttons')
 var selectAvatar = document.querySelector('.cat-imgs')
 
-// First meow page
+// First Meow page
 playBtn.addEventListener('click',function(){
     meowSound2.play()
     sleep(1500).then(() => {
@@ -60,14 +60,14 @@ var temp
 
 // play game
 board.addEventListener('click',function(event){    
-    currentPlayer.clickSound.play()
+    
     // check which index player clicked, will return Nan if can not get index
     var playerClickIndex = getBoardIndex(event) 
     
     //  check if player can click? 
     var canClick = checkCanClick(currentPlayer, playerClickIndex, boardArr)
     if(canClick){
-
+        currentPlayer.clickSound.play()
         // display Player's Turn
         displayAvatar(currentPlayer,playerClickIndex)
         //  check player win? 
@@ -95,7 +95,8 @@ btns.addEventListener('click',function(event){
     // enable click board   
     board.style.pointerEvents = 'auto';
     selectAvatar.style.pointerEvents = 'auto';
-    sleep(1500).then(() => {
+
+    sleep(2000).then(() => {
         action = event.target.className.split(' ').at(-1)
         if(action === 'playagain'){
             displayPlayerTurn(currentPlayer)

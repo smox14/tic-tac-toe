@@ -22,7 +22,7 @@ function clearBoard(board){
 
 function displayGameOver(winner){
     meowSound.play() 
-    message = (winner)? `${winner} win!` : `draw!`
+    message = (winner)? `${winner} wins!` : `draw!`
     sleep(1000).then(() => {
         // set effect blur to the board
         document.querySelector('main').classList.add('blur')

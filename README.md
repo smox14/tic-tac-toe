@@ -1,6 +1,7 @@
 Tic Tac Toe
 ---
 - play my game! --> https://smox14.github.io/tic-tac-toe/
+
 Approach to problem (planning)
 ---
 Cool tech used

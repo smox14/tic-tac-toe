@@ -1,21 +1,18 @@
-Tic Tac Toe
----
-- play my game! --> https://smox14.github.io/tic-tac-toe/
+# MEOW-MEOW-MEOW (Tic Tac Toe Cats version)
+A simple 3x3 Tic Tac Toe game in cat theme. This was built as part of GA project. 
+Try demo! --> [here](https://smox14.github.io/tic-tac-toe/)
 
-Approach to problem (planning)
----
-Cool tech used
----
-Lessons I've learnt
----
-Features
----
-- [x] players can customize their avtar
+#Screenshot
 
-Comming soon 
----
+
+# Tech
+- HTML 
+- CSS 
+- JavaScript
+
+# Comming Soon features
 - [ ] show score
 - [ ] board size options
 - [ ] play with computer
-- [ ] time limit
+
 

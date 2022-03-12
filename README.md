@@ -17,8 +17,8 @@ Try demo! --> [here](https://smox14.github.io/tic-tac-toe/)
 - JavaScript
 
 # Comming Soon Features
-- [ ] show score
-- [ ] board size options
-- [ ] play with computer
+- [ ] Score board
+- [ ] Board size options
+- [ ] Play with computer
 
 
